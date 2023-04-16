@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* remove after completion of project */
+.buffer{
+    height: 1200px;
+}
+
+.construction{
+    color: #fdedea;
+    background-color: #fd5039f8;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    z-index: 999;
+    transform: translateY(-500px);
+    height: 100px;
+    align-items: center;
+}
+
 :root{
     --background-color-1: #131212;
     --background-color-2: #2b2a2a;
@@ -162,16 +179,19 @@ a{
     text-shadow: 3px 3px 5px rgb(48, 46, 47);
 }
 
-.construction{
-    color: #fdedea;
-    background-color: #fd5039f8;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    z-index: 999;
-    transform: translateY(-500px);
+
+.socials-panel{
+    margin-top: 40px;
     height: 100px;
-    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--color-2);
+}
+
+.socials h1{
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color-3);
 }
 
 
@@ -183,6 +203,17 @@ a{
     color: var(--color-2);
 }
 
+.fa-github{
+    font-size: 50px;
+}
+
+.fa-linkedin{
+    font-size: 50px;
+}
+
+.fa-instagram{
+    font-size: 50px;
+}
 
 .skills h1{
     text-align: center;
@@ -243,6 +274,17 @@ a{
     cursor: pointer;
 }
 .fa-react{
+    font-size: 70px;
+}
+
+/* NodeJS Logo */
+.skills-node{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.fa-node-js{
     font-size: 70px;
 }
 
