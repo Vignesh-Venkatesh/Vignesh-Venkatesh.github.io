@@ -1,4 +1,22 @@
-// All the icons
+aboutButtonHTML = document.querySelector(".nav1")
+aboutSectionHTML = document.querySelector(".about-section")
+aboutButtonHTML.addEventListener("click", function(){
+    aboutSectionHTML.scrollIntoView({behavior: 'smooth'})
+})
+
+skillsButtonHTML = document.querySelector(".nav2")
+skillsSectionHTML = document.querySelector(".skills")
+skillsButtonHTML.addEventListener("click", function(){
+    skillsSectionHTML.scrollIntoView({behavior: 'smooth'})
+})
+
+socialsButtonHTML = document.querySelector(".nav3")
+socialsSectionHTML = document.querySelector(".socials")
+socialsButtonHTML.addEventListener("click", function(){
+    socialsSectionHTML.scrollIntoView({behavior: 'smooth'})
+})
+
+
 pythonIcon = document.querySelector(".fa-python")
 pythonStars = document.querySelector(".python-stars")
 pythonStars.style.opacity = "0"
@@ -81,27 +99,4 @@ gitIcon.addEventListener("mouseover", function(){
 gitIcon.addEventListener("mouseout", function(){
     gitStars.style.opacity = "0"
     gitStars.style.transition = "all 0.2s ease-in";
-})
-
-
-// Scroll into view
-//About Button
-aboutButtonHTML = document.querySelector(".nav1")
-aboutButtonHTML.addEventListener("click", function(){
-    // aboutSectionHTML.scrollIntoView({behavior: 'smooth'});
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-})
-
-//Skills Button
-skillsButtonHTML = document.querySelector(".nav2")
-aboutSectionHTML = document.querySelector(".about-section")
-skillsButtonHTML.addEventListener("click", function(){
-    window.scrollTo({ top: `${aboutSectionHTML.clientHeight}`, behavior: 'smooth' })
-})
-
-//Socials Button
-socialsButtonHTML = document.querySelector(".nav3")
-skillsSectionHTML = document.querySelector(".skills")
-socialsButtonHTML.addEventListener("click", function(){
-    window.scrollTo({ top: `${aboutSectionHTML.clientHeight+skillsSectionHTML.clientHeight}`, behavior: 'smooth' })
 })

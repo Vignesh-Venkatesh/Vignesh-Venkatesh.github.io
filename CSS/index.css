@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+
+/* 320px — 480px: Mobile devices */
+/* 481px — 768px: iPads, Tablets */
+/* 769px — 1024px: Small screens, laptops */
+/* 1025px — 1200px: Desktops, large screens */
+/* 1201px and more —  Extra large screens, TV */
+
 /* remove after completion of project */
 .buffer{
     height: 1200px;
@@ -11,10 +18,11 @@
     display: flex;
     justify-content: center;
     font-size: 40px;
-    z-index: 999;
-    transform: translateY(-500px);
+    transform: translateY(-600px);
     height: 100px;
     align-items: center;
+    position: fixed;
+    width: 100%;
 }
 
 :root{
@@ -28,8 +36,10 @@
     --color-5: #C72C41;
     --color-6: #EE4540;
     --drop-shadow: #22211f;
+    --drop-shadow-2: #22211fb4;
     --font-family-1: "DynaPuff";
     --font-family-2: "IBM Plex Mono";
+    --min-navbar-height: 5.625rem;
 }
 
 /* Change scrollbar color */
@@ -54,113 +64,94 @@ body{
     font-family: var(--font-family-1);
 }
 
+a{
+    text-decoration: none;
+}
+
+
 .navbar{
+    background-color: var(--background-color-2);
+    /* background-color: white; */
+    position: fixed;
+    z-index: 999;
+    min-height: var(--min-navbar-height);
+    width: 100%;
+    border-radius: 0 0 0.938rem 0.938rem;
+    box-shadow: 0.313rem 0.313rem 0.313rem var(--drop-shadow);
     display: flex;
     justify-content: space-evenly;
-    background-color: var(--background-color-2);
-    box-shadow: 5px 5px 5px var(--drop-shadow);
     align-items: center;
-    padding: 10px;
-    height: 70px;
-    border-radius: 0 0 15px 15px;
-    position: sticky;
-    top: 0px;
-    z-index: 999;
 }
 
 .navbar button{
-    border: 2px solid black;
     background-color: var(--color-2);
-    color: var(--color-0);
-    width: 125px;
-    height: 45px;
-    border-radius: 10px;
     font-family: var(--font-family-1);
-    cursor: pointer;
-    box-shadow: 2px 2px 2px var(--drop-shadow);
-    font-size: 20px;
+    color: var(--color-0);
+    border: 0.125rem solid black;
+    border-radius: 0.625rem;
+    min-width: 7.813rem;
+    min-height: 2.813rem;
+    font-size: 1.25rem;
     transition: all ease-in 0.2s;
+    cursor: pointer;
+    box-shadow: 0.313rem 0.313rem 0.313rem var(--drop-shadow);
 }
-
 .navbar button:hover{
     background-color: var(--color-0);
     color: var(--color-2);
-    transform: translate(2px, 5px);
+    transform: translate(0.313rem, 0.313rem);
     box-shadow: none;
 }
 
 .about-section{
-    font-family: var(--font-family-1);
-    color: white;
+    padding-top: calc(var(--min-navbar-height) + 3rem);
     display: flex;
-    margin-top: auto;
-    width: auto;
-    height: 400px;
-    justify-content: space-around;
-    margin-left: 100px;
-    margin-right: 100px;
-    color: var(--color-2);
+    min-width: 43.75rem;
+    max-height: 25rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55.25rem;
 }
+
 
 .about-write{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 500px;
-    height: 400px;
-    justify-content: center;
-
+    color: var(--color-2);
+    font-size: 1.25rem;
+    margin-right: 3rem;
 }
 
-.about-image{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 400px;
-    justify-content: center;
-    
-}
-
-.about-image img{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 5px solid var(--color-3);
-    margin-left: 20px;
+.about-write a{
+    color: var(--color-2);
 }
 
 .about-write h1{
-    font-size: 25px;
-    margin-bottom: 20px;
     color: var(--color-3);
+    font-size: 1.563rem;
+    margin-bottom: 1rem;
 }
 
 .about-write p{
-    font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0.6rem;
 }
 
-.highlight{
-    background-color: var(--color-2);
-    color: var(--color-0);
+.about-image img{
+    max-width: 19.375rem;
+    max-height: 19.375rem;
+    border-radius: 50%;
+    border: 0.313rem solid var(--color-3);
 }
-
-a{
-    text-decoration: none;
-    color: var(--color-2);
+.about-image img:hover{
+    animation: rotate 5s infinite;
+    cursor: url("../Assets/pointer.svg"), auto;
 }
-
 
 @keyframes rotate {
     0% {
       transform: rotate(0deg);
     }
     50% {
-      transform: rotate(-10deg);
+      transform: rotate(5deg);
     }
     100% {
       transform: rotate(0deg);
@@ -168,133 +159,152 @@ a{
 }
 
 .hand{
-    transform: translate(20px,-90px);
-}
-
-.about-image .hand h1{
-    z-index: 1;
-    font-size: 60px;
-    animation: rotate 1s infinite;
+    top: calc(var(--min-navbar-height) + 17rem);
+    z-index: 998;
     position: absolute;
-    text-shadow: 3px 3px 5px rgb(48, 46, 47);
+    font-size: 3rem;
+    animation: rotate 1.2s infinite;
 }
 
-
-.socials-panel{
-    margin-top: 40px;
-    height: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    color: var(--color-2);
+.hand h1{
+    text-shadow: 0.313rem 0.313rem 0.313rem var(--drop-shadow-2);;
 }
 
-.socials h1{
-    text-align: center;
-    margin-top: 20px;
+.skills{
+    padding-top: calc(var(--min-navbar-height) + 1rem);
+    align-items: center;
     color: var(--color-3);
-}
-
-
-.skills-panel{
-    margin-top: 40px;
-    height: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    color: var(--color-2);
-}
-
-.fa-github{
-    font-size: 50px;
-}
-
-.fa-linkedin{
-    font-size: 50px;
-}
-
-.fa-instagram{
-    font-size: 50px;
+    text-align: center;
 }
 
 .skills h1{
-    text-align: center;
-    margin-top: 20px;
-    color: var(--color-3);
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* Python Logo */
+.skills-panel{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--color-2);
+    min-width: 46.875rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.fa-star{
+    font-size: 1rem;
+    padding: 0;
+}
+
 .skills-python{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-python{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* HTML Logo */
+
 .skills-html{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
-
 }
 .fa-html5{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* CSS Logo */
 .skills-css{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-css3-alt{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* Javascript Logo */
 .skills-js{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-square-js{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* React Logo */
 .skills-react{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-react{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* NodeJS Logo */
 .skills-node{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-node-js{
-    font-size: 70px;
+    font-size: 4.375rem;
 }
 
-/* Git Logo */
 .skills-git{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .fa-git-alt{
-    font-size: 70px;
+    font-size: 4.375rem;
+}
+
+.socials{
+    padding-top: calc(var(--min-navbar-height) + 0.5rem);
+}
+
+.socials-panel{
+    max-height: 6.25rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials-panel a{
+    color: var(--color-2);
+}
+
+.socials h1{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--color-3);
+    margin-bottom: 1rem;
+}
+
+.fa-github{
+    font-size: 3.125rem;
+}
+
+.fa-linkedin{
+    font-size: 3.125rem;
+}
+
+.fa-instagram{
+    font-size: 3.125rem;
 }
