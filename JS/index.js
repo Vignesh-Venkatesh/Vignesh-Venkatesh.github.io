@@ -10,12 +10,17 @@ skillsButtonHTML.addEventListener("click", function(){
     skillsSectionHTML.scrollIntoView({behavior: 'smooth'})
 })
 
-socialsButtonHTML = document.querySelector(".nav3")
+resumeButtonHTML = document.querySelector(".nav3")
+resumeSectionHTML = document.querySelector(".socials")
+resumeButtonHTML.addEventListener("click", function(){
+    resumeSectionHTML.scrollIntoView({behavior: 'smooth'})
+})
+
+socialsButtonHTML = document.querySelector(".nav4")
 socialsSectionHTML = document.querySelector(".socials")
 socialsButtonHTML.addEventListener("click", function(){
     socialsSectionHTML.scrollIntoView({behavior: 'smooth'})
 })
-
 
 pythonIcon = document.querySelector(".fa-python")
 pythonStars = document.querySelector(".python-stars")
