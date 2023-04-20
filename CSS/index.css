@@ -41,6 +41,7 @@
     --font-family-1: "DynaPuff";
     --font-family-2: "IBM Plex Mono";
     --min-navbar-height: 5.625rem;
+    /* --min-navbar-height-mobile: 5.625rem; */
 }
 
 /* Change scrollbar color */
@@ -487,3 +488,54 @@ a{
     width: 200px;
     justify-content: space-evenly;
 }
+
+@media all and (min-width:481px) and (max-width:768px){
+    body{
+        background-color:white;
+    }
+}
+
+@media all and (max-width:480px) and (min-width:375px){
+    
+
+    body{
+        /* background-color:white; */
+        box-sizing: border-box;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .about-section{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        min-width: 21.875rem;
+        align-items: center;
+        min-height: 53.125rem;
+        max-width: 23.438rem;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .about-write{
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+    }
+
+    .skills{
+        padding: 0;
+    }
+
+    .hand{
+        display: none;
+    }
+
+}
+
