@@ -1,3 +1,9 @@
+// Easter Egg
+console.log(
+    "%c Hey! Did you like my portfolio? 🤔",
+    "color: #FF6000; font-weight: bold; font-size: 24px;"
+)
+
 aboutButtonHTML = document.querySelector(".nav1")
 aboutSectionHTML = document.querySelector(".about-section")
 aboutButtonHTML.addEventListener("click", function(){
@@ -20,6 +26,12 @@ socialsButtonHTML = document.querySelector(".nav4")
 socialsSectionHTML = document.querySelector(".socials")
 socialsButtonHTML.addEventListener("click", function(){
     socialsSectionHTML.scrollIntoView({behavior: 'smooth'})
+})
+
+projectButtonHTML = document.querySelector(".nav5")
+projectSectionHTML = document.querySelector(".projects")
+projectButtonHTML.addEventListener("click", function(){
+    projectSectionHTML.scrollIntoView({behavior: 'smooth'})
 })
 
 pythonIcon = document.querySelector(".fa-python")
@@ -105,3 +117,20 @@ gitIcon.addEventListener("mouseout", function(){
     gitStars.style.opacity = "0"
     gitStars.style.transition = "all 0.2s ease-in";
 })
+
+
+const boxes = document.querySelectorAll('.project-box')
+window.addEventListener("scroll", checkBoxes)
+checkBoxes()
+
+function checkBoxes(){
+    const triggerBottom = window.innerHeight/5 * 4
+    boxes.forEach(box=>{
+        const boxTop = box.getBoundingClientRect().top
+        if (boxTop<triggerBottom){
+            box.classList.add("show")
+        } else {
+            box.classList.remove("show")
+        }
+    })
+}
